@@ -48,6 +48,10 @@ public class ImageLoader {
         startButton = loadImage("/Images/start.png");
         startButtonCropped = loadImage("/Images/startCropped.png");
         menuBackground = loadImage("/Images/menuBackground.png");
+        redButtonClicked = loadImage("/Images/rojoClicked.png");
+        blueButtonClicked = loadImage("/Images/azulClicked.png");
+        greenButtonClicked = loadImage("/Images/verdeClicked.png");
+        yellowButtonClicked = loadImage("/Images/amarilloClicked.png");
     }
 
     private Image loadImage(String imageName) {
