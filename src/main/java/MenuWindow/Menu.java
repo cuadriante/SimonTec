@@ -1,66 +1,56 @@
 package MenuWindow;
 
+import GameWindow.GameWindow;
 import ImageLoader.ImageLoader;
-import javafx.animation.FadeTransition;
-import javafx.concurrent.Task;
 import javafx.scene.Scene;
 import javafx.scene.Group;
 import javafx.scene.control.Button;
-import javafx.scene.effect.ImageInput;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
-import javafx.util.Duration;
-
-import java.io.FileNotFoundException;
 
 public class Menu {
     Stage lobby;
-    Group root;
+    Group menuWindow;
+
     public Menu(Stage Lobby){
+
+        menuWindow = new Group();
+        Scene scene = new Scene(menuWindow,700,700,Color.valueOf("#222222"));
+
         lobby = Lobby;
         lobby.setTitle( "SIMONTEC" );
-        root = new Group();
-        Scene scene = new Scene( root,700,700,Color.valueOf("#222222"));
+        lobby.setResizable(false);
         lobby.setScene(scene);
-
-        Task<Void> menu = new Task<Void>() {
-            @Override
-            protected Void call() throws Exception {
-                Thread.sleep(7000);
-                return null;
-            }
-        };
 
         lobby.show();
 
         createComponents();
-
-//        menu.setOnSucceeded(event -> {
-//            try {
-//               createComponents();
-//            } catch (Exception e){
-//                System.out.println(e.getMessage());
-//            }
-//
-//        });
     }
+
     public void createComponents(){
+
+        ImageView menuBackground = new ImageView(ImageLoader.getInstance().getMenuBackground());
+        menuBackground.setLayoutX(0);
+        menuBackground.setLayoutY(0);
+
         Button startButton =new Button();
-        startButton.setLayoutX(0);
-        startButton.setLayoutY(0);
-        ImageView startButtonImage = new ImageView(ImageLoader.getInstance().getStartButton());
+        startButton.setLayoutX(266);
+        startButton.setLayoutY(270);
+        ImageView startButtonImage = new ImageView(ImageLoader.getInstance().getStartButtonCropped());
         startButton.setGraphic(startButtonImage);
         startButton.setWrapText(true);
-        root.getChildren().add(startButton);
-//        juegoInicia.setOnAction(e -> {
-//            lobby.hide(); //se esconde la ventana principal
-//            try {
-//                //VentanaDeJuego.iniciarVentanaDeJuego(lobby); //se abre la ventana de juego
-//            } catch (FileNotFoundException fileNotFoundException) {
-//                fileNotFoundException.printStackTrace();
-//            }
-//        });
+
+        menuWindow.getChildren().add(menuBackground);
+        menuWindow.getChildren().add(startButton);
+
+        startButton.setOnAction(e ->{
+            try{
+                lobby.hide();
+                GameWindow gameWindow = new GameWindow(lobby);
+            } catch (Exception e2){
+                e2.getMessage();
+            }
+                });
     }
 }

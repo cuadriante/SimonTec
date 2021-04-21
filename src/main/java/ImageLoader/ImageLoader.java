@@ -23,6 +23,8 @@ public class ImageLoader {
     private Image redButtonClicked = null;
     private Image greenButtonClicked = null;
     private Image startButton = null;
+    private Image startButtonCropped = null;
+    private Image menuBackground = null;
 
     // constructor privado para que solo exista una instancia
     private ImageLoader() {
@@ -44,6 +46,8 @@ public class ImageLoader {
         redButton = loadImage("/Images/rojo.png");
         greenButton = loadImage("/Images/verde.png");
         startButton = loadImage("/Images/start.png");
+        startButtonCropped = loadImage("/Images/startCropped.png");
+        menuBackground = loadImage("/Images/menuBackground.png");
     }
 
     private Image loadImage(String imageName) {
@@ -92,4 +96,9 @@ public class ImageLoader {
     public Image getStartButton() {
         return startButton;
     }
+
+    public Image getStartButtonCropped() { return startButtonCropped; }
+
+    public Image getMenuBackground() { return menuBackground; }
+
 }
