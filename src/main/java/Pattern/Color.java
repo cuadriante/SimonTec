@@ -1,5 +1,6 @@
 package Pattern;
 
+import GameWindow.GameWindow;
 import javafx.scene.image.ImageView;
 
 import java.util.Random;
@@ -13,7 +14,7 @@ public class Color {
         //color = chooseColor();
     }
 
-    public String chooseColor(){
+    public void chooseColor(){
         String chosenColor;
         int possibleColor = random.nextInt(4);
         switch (possibleColor) {
@@ -22,7 +23,8 @@ public class Color {
             case 3 -> chosenColor = "green";
             default -> chosenColor = "yellow";
         }
-        return chosenColor;
+        setColorImage(chosenColor);
+        color = chosenColor;
     }
 
     public void setColor(String newColor){
@@ -30,9 +32,19 @@ public class Color {
     }
 
     public void setColorImage(String stringColor){
-//        if (stringColor == "red"){
-//            colorImage = ImageLoader.
-//        }
+        switch (stringColor) {
+            case "red" -> colorImage = GameWindow.redTileClicked;
+            case "blue" -> colorImage = GameWindow.blueTileClicked;
+            case "green" -> colorImage = GameWindow.greenTileClicked;
+            default -> colorImage = GameWindow.yellowTileClicked;
+        }
+    }
+
+    public ImageView getColorImage(){
+        return colorImage;
+    }
+    public String getColorColor(){
+        return color;
     }
 
 }

@@ -9,6 +9,16 @@ public class UserPatternStorage {
         Color newColor = new Color();
         newColor.setColor(color);
         userPatternStorage.addLast(newColor);
-        userPatternStorage.printList();
+        printColorList();
+    }
+
+    public void printColorList() {
+        int size = userPatternStorage.listSize();
+        int index = 0;
+        do {
+            Color temp = userPatternStorage.getElement(index);
+            System.out.print(temp.getColorColor() + ", ");
+            index++;
+        } while (index != size);
     }
 }

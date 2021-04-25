@@ -19,13 +19,21 @@ import javafx.util.Duration;
 public class GameWindow {
     private static Stage gameStage;
     private static Group gameWindow = new Group();
-    private static Scene gameScene = new Scene(gameWindow,700,700,Color.valueOf("#222222"));;
-    private static Text levelLabel = new Text();
+    private static Scene gameScene = new Scene(gameWindow,700,700,Color.valueOf("#222222"));
+
+    public static ImageView redTileClicked = new ImageView(ImageLoader.getInstance().getRedButtonClicked());
+    public static ImageView blueTileClicked = new ImageView(ImageLoader.getInstance().getBlueButtonClicked());
+    public static ImageView greenTileClicked = new ImageView(ImageLoader.getInstance().getGreenButtonClicked());
+    public static ImageView yellowTileClicked = new ImageView(ImageLoader.getInstance().getYellowButtonClicked());
+
+
     private static UserPatternStorage userPatternStorage = new UserPatternStorage();
     private static PatternStorage patternStorage = new PatternStorage();
+
+    private static Text levelLabel = new Text();
     private static int level = patternStorage.getLevel();
 
-    public GameWindow(Stage lobby){
+    public GameWindow(Stage lobby) {
 
         gameStage = lobby;
         gameStage.setTitle( "SIMONTEC" );
@@ -37,22 +45,18 @@ public class GameWindow {
         menuBackground.setLayoutX(0);
         menuBackground.setLayoutY(0);
 
-        ImageView redTileClicked = new ImageView(ImageLoader.getInstance().getRedButtonClicked());
         redTileClicked.setLayoutX(103);
         redTileClicked.setLayoutY(105);
         redTileClicked.setOpacity(0.0);
 
-        ImageView blueTileClicked = new ImageView(ImageLoader.getInstance().getBlueButtonClicked());
         blueTileClicked.setLayoutX(335);
         blueTileClicked.setLayoutY(331);
         blueTileClicked.setOpacity(0.0);
 
-        ImageView greenTileClicked = new ImageView(ImageLoader.getInstance().getGreenButtonClicked());
         greenTileClicked.setLayoutX(333);
         greenTileClicked.setLayoutY(107);
         greenTileClicked.setOpacity(0.0);
 
-        ImageView yellowTileClicked = new ImageView(ImageLoader.getInstance().getYellowButtonClicked());
         yellowTileClicked.setLayoutX(101);
         yellowTileClicked.setLayoutY(330);
         yellowTileClicked.setOpacity(0.0);
@@ -70,7 +74,8 @@ public class GameWindow {
 
         setLevelLabel();
 
-        patternStorage.patternStorageAnimation(gameWindow);
+        //patternStorage.printColorList();
+        patternStorage.patternStorageAnimation();
 
     }
 
@@ -81,7 +86,6 @@ public class GameWindow {
 
             @Override
             public void handle(MouseEvent event) {
-                System.out.println("Tile pressed ");
                 lightUpTileAnimation(tileColor);
                 event.consume();
                 userPatternStorage.addColor(color);
