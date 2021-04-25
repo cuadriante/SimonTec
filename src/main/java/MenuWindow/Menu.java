@@ -1,7 +1,8 @@
 package MenuWindow;
 
 import GameWindow.GameWindow;
-import ImageLoader.ImageLoader;
+import Resources.ImageLoader;
+import Resources.MusicPlayer;
 import javafx.scene.Scene;
 import javafx.scene.Group;
 import javafx.scene.control.Button;
@@ -9,9 +10,13 @@ import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
+import java.net.URISyntaxException;
+
 public class Menu {
-    Stage lobby;
-    Group menuWindow;
+    private final Stage lobby;
+    private final Group menuWindow;
+    private MusicPlayer musicPlayer;
+
 
     public Menu(Stage Lobby){
 
@@ -30,6 +35,13 @@ public class Menu {
 
     public void createComponents(){
 
+        try {
+            musicPlayer = new MusicPlayer();
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+        }
+        musicPlayer.reproducir();
+
         ImageView menuBackground = new ImageView(ImageLoader.getInstance().getMenuBackground());
         menuBackground.setLayoutX(0);
         menuBackground.setLayoutY(0);
@@ -47,7 +59,7 @@ public class Menu {
         startButton.setOnAction(e ->{
             try{
                 lobby.hide();
-                GameWindow gameWindow = new GameWindow(lobby);
+                GameWindow gameWindow = new GameWindow(lobby, musicPlayer);
             } catch (Exception e2){
                 e2.getMessage();
             }

@@ -1,9 +1,10 @@
 package GameWindow;
 
-import ImageLoader.ImageLoader;
+import Resources.ImageLoader;
 import Level.LevelSetter;
 import Pattern.PatternStorage;
 import Pattern.UserPatternStorage;
+import Resources.MusicPlayer;
 import javafx.animation.FadeTransition;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -33,7 +34,9 @@ public class GameWindow {
     public static PatternStorage patternStorage = new PatternStorage();
 
 
-    public GameWindow(Stage lobby) {
+    public GameWindow(Stage lobby, MusicPlayer musicPlayer) {
+
+        musicPlayer.reproducir();
 
         gameStage = lobby;
         gameStage.setTitle( "SIMONTEC" );

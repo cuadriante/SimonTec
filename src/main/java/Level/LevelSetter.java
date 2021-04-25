@@ -39,7 +39,7 @@ public class LevelSetter {
         GameWindow.gameWindow.getChildren().add(levelLabel);
     }
 
-    public static void checkPatternRepetition(int index){
+    public static void checkPatternRepetition(int index) {
         System.out.println("index" + index);
         String currentColor = patternStorageColor.getElement(index);
         String currentUserColor = userPatternStorageColor.getElement(index);
@@ -55,7 +55,7 @@ public class LevelSetter {
 
     }
 
-    public static void nextLevel(){
+    public static void nextLevel() {
         GameWindow.patternStorage.addColor();
         GameWindow.patternStorage.setIndex(0);
         GameWindow.patternStorage.patternStorageAnimation();
