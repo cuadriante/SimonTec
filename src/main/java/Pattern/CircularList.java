@@ -115,21 +115,18 @@ public class CircularList<T> implements Serializable {
         }
     }
 
-    public int getPosition(T element){
-        if (first == null) {
-            return -1;
-        } else {
-            int index = 0;
-            Node<T> actual = first;
-            do { // se ejecuta al menos una vez
-                if ( (T) actual.getElement() == element){
-                    return  index;
-                }
-                index++;
-                actual = actual.next;
-            } while (actual != first);
+    public void deleteAll() {
+        if (first != null) {
+            if (first.next == first) {
+                deleteFirst();
+            } else {
+                Node<T> actual = first;
+                int index = 0;
+                do {
+                    deletePosition(index);
+                } while (index <= listSize()-1);
+            }
         }
-        return -1;
     }
 
     public void deletePosition(int position){
@@ -155,6 +152,23 @@ public class CircularList<T> implements Serializable {
                 } while (actual != first);
             }
         }
+    }
+
+    public int getPosition(T element){
+        if (first == null) {
+            return -1;
+        } else {
+            int index = 0;
+            Node<T> actual = first;
+            do { // se ejecuta al menos una vez
+                if ( (T) actual.getElement() == element){
+                    return  index;
+                }
+                index++;
+                actual = actual.next;
+            } while (actual != first);
+        }
+        return -1;
     }
 }
 

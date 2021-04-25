@@ -9,8 +9,8 @@ import java.sql.Time;
 
 public class PatternStorage {
     CircularList<Color> patternStorage = new CircularList<>();
+    CircularList<String> patternStorageColor = new CircularList<>();
     private Task<Void> animacion;
-    private boolean pararAnimacion = false;
     private int index = 0;
     private int size = patternStorage.listSize();
 
@@ -22,6 +22,7 @@ public class PatternStorage {
         Color newColor = new Color();
         newColor.chooseColor();
         patternStorage.addLast(newColor);
+        patternStorageColor.addLast(newColor.getColorColor());
     }
 
     public void patternStorageAnimation(){
@@ -37,9 +38,7 @@ public class PatternStorage {
                         GameWindow.lightUpTileAnimation(colorImage);
                         Thread.sleep(1000);
                         index++;
-                        printColorList();
                     } while (index <= size);
-
                 return null;
             }
         };
@@ -55,14 +54,28 @@ public class PatternStorage {
         return patternStorage.listSize();
     }
 
-    public void printColorList() {
-        int size = patternStorage.listSize();
-        int index = 0;
-        do {
-            Color temp = patternStorage.getElement(index);
-            System.out.print(temp.getColorColor() + ", ");
-            index++;
-        } while (index != size);
+    public CircularList<String> getPatternStorageColor() {
+        return patternStorageColor;
+    }
+
+    public void setIndex(int index){
+        this.index = index;
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

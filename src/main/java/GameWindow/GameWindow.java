@@ -1,6 +1,7 @@
 package GameWindow;
 
 import ImageLoader.ImageLoader;
+import Level.LevelSetter;
 import Pattern.PatternStorage;
 import Pattern.UserPatternStorage;
 import javafx.animation.FadeTransition;
@@ -17,8 +18,9 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 public class GameWindow {
-    private static Stage gameStage;
-    private static Group gameWindow = new Group();
+
+    public static Stage gameStage;
+    public static Group gameWindow = new Group();
     private static Scene gameScene = new Scene(gameWindow,700,700,Color.valueOf("#222222"));
 
     public static ImageView redTileClicked = new ImageView(ImageLoader.getInstance().getRedButtonClicked());
@@ -27,11 +29,9 @@ public class GameWindow {
     public static ImageView yellowTileClicked = new ImageView(ImageLoader.getInstance().getYellowButtonClicked());
 
 
-    private static UserPatternStorage userPatternStorage = new UserPatternStorage();
-    private static PatternStorage patternStorage = new PatternStorage();
+    public static UserPatternStorage userPatternStorage = new UserPatternStorage();
+    public static PatternStorage patternStorage = new PatternStorage();
 
-    private static Text levelLabel = new Text();
-    private static int level = patternStorage.getLevel();
 
     public GameWindow(Stage lobby) {
 
@@ -72,9 +72,8 @@ public class GameWindow {
         gameWindow.getChildren().add(greenTileClicked);
         gameWindow.getChildren().add(yellowTileClicked);
 
-        setLevelLabel();
-
-        //patternStorage.printColorList();
+        LevelSetter.setLevelLabel();
+        LevelSetter.setLevel();
         patternStorage.patternStorageAnimation();
 
     }
@@ -89,6 +88,7 @@ public class GameWindow {
                 lightUpTileAnimation(tileColor);
                 event.consume();
                 userPatternStorage.addColor(color);
+                LevelSetter.checkPatternRepetition(userPatternStorage.getIndex());
             }
         });
 
@@ -99,22 +99,6 @@ public class GameWindow {
         fadeTransition.setFromValue(1.0);
         fadeTransition.setToValue(0.0);
         fadeTransition.play();
-    }
-
-    public static void setLevelLabel(){
-        String levelString = Integer.toString(level);
-
-        levelLabel.setText(levelString);
-        levelLabel.setX(312);
-        levelLabel.setY(389);
-        levelLabel.setFill(Color.valueOf("#ffffff"));
-
-        double fontSize = 120;
-        FontWeight fontWeight = FontWeight.BOLD;
-        Font font = Font.font("Arial", fontWeight,fontSize);
-        levelLabel.setFont(font);
-
-        gameWindow.getChildren().add(levelLabel);
     }
 
 }

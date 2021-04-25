@@ -1,20 +1,22 @@
+Pattern/Color.java
+ Pattern.Color
 Pattern/Node.java
  Pattern.Node
-Main.java
- Main
 Pattern/CircularList.java
  Pattern.CircularList
 Pattern/UserPatternStorage.java
  Pattern.UserPatternStorage
 ImageLoader/ImageLoader.java
  ImageLoader.ImageLoader
-Pattern/Color.java
- Pattern.Color
+Main.java
+ Main
+MenuWindow/Menu.java
+ MenuWindow.Menu
 Pattern/PatternStorage.java
  Pattern.PatternStorage
  Pattern.PatternStorage$1
 GameWindow/GameWindow.java
  GameWindow.GameWindow
  GameWindow.GameWindow$1
-MenuWindow/Menu.java
- MenuWindow.Menu
+Level/LevelSetter.java
+ Level.LevelSetter
