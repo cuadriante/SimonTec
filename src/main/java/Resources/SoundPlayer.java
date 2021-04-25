@@ -14,6 +14,7 @@ public class SoundPlayer {
     private final String blueSound = "/Music/blueSound.mp3";
     private final String greenSound = "/Music/greenSound.mp3";
     private final String yellowSound = "/Music/yellowSound.mp3";
+    private final String nextLevelSound = "/Music/nextLevel.mp3";
 
 
     public SoundPlayer(String color) throws URISyntaxException {
@@ -29,6 +30,9 @@ public class SoundPlayer {
         soundPlayer.setAutoPlay(true);
     }
 
+    public void stop(){
+        soundPlayer.setVolume(0);
+    }
 
     public String getColorSound(String color){
         String colorSound;

@@ -1,3 +1,12 @@
+Resources/SoundPlayer.java
+ Resources.SoundPlayer
+MenuWindow/Menu.java
+ MenuWindow.Menu
+GameWindow/GameWindow.java
+ GameWindow.GameWindow
+ GameWindow.GameWindow$1
+Pattern/Node.java
+ Pattern.Node
 Pattern/Color.java
  Pattern.Color
 Main.java
@@ -14,14 +23,7 @@ Resources/ImageLoader.java
 Pattern/PatternStorage.java
  Pattern.PatternStorage
  Pattern.PatternStorage$1
+GameWindow/GameOverWindow.java
+ GameWindow.GameOverWindow
 Level/LevelSetter.java
  Level.LevelSetter
-MenuWindow/Menu.java
- MenuWindow.Menu
-Pattern/Node.java
- Pattern.Node
-Resources/SoundPlayer.java
- Resources.SoundPlayer
-GameWindow/GameWindow.java
- GameWindow.GameWindow
- GameWindow.GameWindow$1

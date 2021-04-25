@@ -33,10 +33,11 @@ public class GameWindow {
     public static UserPatternStorage userPatternStorage = new UserPatternStorage();
     public static PatternStorage patternStorage = new PatternStorage();
 
-    private static SoundPlayer soundPlayer;
+    public static SoundPlayer soundPlayer;
+    public static MusicPlayer musicPlayer;
 
     public GameWindow(Stage lobby, MusicPlayer musicPlayer) {
-
+        this.musicPlayer = musicPlayer;
         musicPlayer.play();
 
         gameStage = lobby;
@@ -77,7 +78,9 @@ public class GameWindow {
         gameWindow.getChildren().add(yellowTileClicked);
 
         LevelSetter.setLevelLabel();
-        LevelSetter.setLevel();
+        LevelSetter.setWaitLabel();
+        LevelSetter.setRepeatLabel();
+        //LevelSetter.setWaitLabel("#808080");
         patternStorage.patternStorageAnimation();
 
     }
