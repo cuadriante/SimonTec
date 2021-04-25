@@ -41,11 +41,11 @@ public class ImageLoader {
 
     //llama a todos los cargar imagenes de todas las imagenes
     private void loadImages() {
-        yellowButton = loadImage("/Images/amarillo.png");
-        blueButton = loadImage("/Images/azul.png");
-        redButton = loadImage("/Images/rojo.png");
-        greenButton = loadImage("/Images/verde.png");
-        startButton = loadImage("/Images/start.png");
+        //yellowButton = loadImage("/Images/amarillo.png");
+        //blueButton = loadImage("/Images/azul.png");
+        //redButton = loadImage("/Images/rojo.png");
+        //greenButton = loadImage("/Images/verde.png");
+        //startButton = loadImage("/Images/start.png");
         startButtonCropped = loadImage("/Images/startCropped.png");
         menuBackground = loadImage("/Images/menuBackground.png");
         redButtonClicked = loadImage("/Images/rojoClicked.png");
@@ -59,7 +59,7 @@ public class ImageLoader {
         try {
             InputStream inputStream = this.getClass().getResourceAsStream(imageName);
             resultado = new Image(inputStream);
-        } catch (Exception e) {
+        } catch (NullPointerException e) {
             e.printStackTrace();
         }
         return resultado;

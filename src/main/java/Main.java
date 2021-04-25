@@ -6,8 +6,8 @@ import javafx.stage.Stage;
 public class Main extends Application {
     @Override
     public void start(Stage Lobby) throws Exception {
-        //Menu menu = new Menu(Lobby);
-        GameWindow gameWindow = new GameWindow(Lobby);
+        Menu menu = new Menu(Lobby);
+        //GameWindow gameWindow = new GameWindow(Lobby);
     }
 
     public static void main(String[] args) {
