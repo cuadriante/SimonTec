@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d2079038-9ed2-45cd-8a28-0affc61e89e7" name="Default Changelist" comment="Se agrego reconocimiento de patron de usuario y comparacion con el patron establecido">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Resources/MusicPlayer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Music/kirbyrr.mp3" afterDir="false" />
+    <list default="true" id="d2079038-9ed2-45cd-8a28-0affc61e89e7" name="Default Changelist" comment="se agrego musica">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Resources/SoundPlayer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Music/blueSound.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Music/greenSound.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Music/redSound.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Music/yellowSound.mp3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.8/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8/fileHashes/fileHashes.bin" afterDir="false" />
@@ -15,15 +18,22 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.8/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/GameWindow/GameWindow$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/GameWindow/GameWindow$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/GameWindow/GameWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/GameWindow/GameWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ImageLoader/ImageLoader.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/GameWindow/GameWindow$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/GameWindow/GameWindow.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Level/LevelSetter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Main.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/MenuWindow/Menu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Pattern/CircularList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Pattern/Color.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Pattern/Node.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Pattern/PatternStorage$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Pattern/PatternStorage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Pattern/UserPatternStorage.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/GameWindow/GameWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameWindow/GameWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ImageLoader/ImageLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Resources/ImageLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Level/LevelSetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Level/LevelSetter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MenuWindow/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MenuWindow/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Pattern/PatternStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pattern/PatternStorage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Resources/MusicPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Resources/MusicPlayer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -243,7 +253,7 @@
       <workItem from="1618977105947" duration="321000" />
       <workItem from="1618977454607" duration="1205000" />
       <workItem from="1619146755764" duration="22000" />
-      <workItem from="1619302014904" duration="21989000" />
+      <workItem from="1619302014904" duration="24055000" />
     </task>
     <task id="LOCAL-00001" summary="Se agrego animacion de iluminacion de botones">
       <created>1618982088680</created>
@@ -273,7 +283,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619325183547</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="se agrego musica">
+      <created>1619327222442</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1619327222442</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -297,6 +314,7 @@
     <MESSAGE value="Se agrego lista para guardar patron de colores y label de nivel" />
     <MESSAGE value="Se agrego animacion de patron creado" />
     <MESSAGE value="Se agrego reconocimiento de patron de usuario y comparacion con el patron establecido" />
-    <option name="LAST_COMMIT_MESSAGE" value="Se agrego reconocimiento de patron de usuario y comparacion con el patron establecido" />
+    <MESSAGE value="se agrego musica" />
+    <option name="LAST_COMMIT_MESSAGE" value="se agrego musica" />
   </component>
 </project>

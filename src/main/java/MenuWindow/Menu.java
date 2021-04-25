@@ -40,7 +40,7 @@ public class Menu {
         } catch (URISyntaxException e) {
             e.printStackTrace();
         }
-        musicPlayer.reproducir();
+        musicPlayer.play();
 
         ImageView menuBackground = new ImageView(ImageLoader.getInstance().getMenuBackground());
         menuBackground.setLayoutX(0);

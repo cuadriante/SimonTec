@@ -5,6 +5,7 @@ import Level.LevelSetter;
 import Pattern.PatternStorage;
 import Pattern.UserPatternStorage;
 import Resources.MusicPlayer;
+import Resources.SoundPlayer;
 import javafx.animation.FadeTransition;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -12,11 +13,10 @@ import javafx.scene.Group;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+
+import java.net.URISyntaxException;
 
 public class GameWindow {
 
@@ -33,10 +33,11 @@ public class GameWindow {
     public static UserPatternStorage userPatternStorage = new UserPatternStorage();
     public static PatternStorage patternStorage = new PatternStorage();
 
+    private static SoundPlayer soundPlayer;
 
     public GameWindow(Stage lobby, MusicPlayer musicPlayer) {
 
-        musicPlayer.reproducir();
+        musicPlayer.play();
 
         gameStage = lobby;
         gameStage.setTitle( "SIMONTEC" );
@@ -88,7 +89,7 @@ public class GameWindow {
 
             @Override
             public void handle(MouseEvent event) {
-                lightUpTileAnimation(tileColor);
+                lightUpTileAnimation(tileColor, color);
                 event.consume();
                 userPatternStorage.addColor(color);
                 LevelSetter.checkPatternRepetition(userPatternStorage.getIndex());
@@ -97,11 +98,22 @@ public class GameWindow {
 
     }
 
-    public static void lightUpTileAnimation(ImageView tileColor) {
+    public static void lightUpTileAnimation(ImageView tileColor, String color) {
         FadeTransition fadeTransition = new FadeTransition(Duration.millis(1000), tileColor);
         fadeTransition.setFromValue(1.0);
         fadeTransition.setToValue(0.0);
         fadeTransition.play();
+        playNote(color);
+    }
+
+    public static void playNote(String color){
+        try {
+            soundPlayer = new SoundPlayer(color);
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+        }
+
+        soundPlayer.play();
     }
 
 }

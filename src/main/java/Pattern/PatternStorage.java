@@ -35,7 +35,7 @@ public class PatternStorage {
                         }
                         Color colorToLightUp = patternStorage.getElement(index);
                         ImageView colorImage = colorToLightUp.getColorImage();
-                        GameWindow.lightUpTileAnimation(colorImage);
+                        GameWindow.lightUpTileAnimation(colorImage, colorToLightUp.getColorColor());
                         Thread.sleep(1000);
                         index++;
                     } while (index <= size);

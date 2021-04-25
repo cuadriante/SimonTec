@@ -17,18 +17,18 @@ public class MusicPlayer {
 
     }
 
-    public void reproducir(){
+    public void play(){
         mediaPlayer.setOnEndOfMedia(new Runnable() {
             public void run() {
                 mediaPlayer.seek(Duration.ZERO);
             }
         });
-        mediaPlayer.setVolume(10.0);
+        mediaPlayer.setVolume(0.1);
         mediaPlayer.setAutoPlay(true);
     }
 
 
-    public void detener(){
+    public void stop(){
         mediaPlayer.setVolume(0);
     }
 
