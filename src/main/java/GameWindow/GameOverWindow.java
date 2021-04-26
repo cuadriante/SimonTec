@@ -1,9 +1,11 @@
 package GameWindow;
 
+import Resources.ImageLoader;
 import Resources.MusicPlayer;
 import Resources.SoundPlayer;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.image.ImageView;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -24,6 +26,10 @@ public class GameOverWindow {
         gameOverWindow = new Group();
         Scene scene = new Scene(gameOverWindow,700,700, Color.valueOf("#222222"));
 
+        ImageView gameOverBackground = new ImageView(ImageLoader.getInstance().getGameOverBackground());
+        gameOverBackground.setLayoutX(0);
+        gameOverBackground.setLayoutY(0);
+
         lobby = Lobby;
         lobby.setTitle( "SIMONTEC" );
         lobby.setResizable(false);
@@ -41,6 +47,7 @@ public class GameOverWindow {
         Font font = Font.font("Arial", fontWeight,fontSize);
         gameOverLabel.setFont(font);
 
+        gameOverWindow.getChildren().add(gameOverBackground);
         gameOverWindow.getChildren().add(gameOverLabel);
 
     }

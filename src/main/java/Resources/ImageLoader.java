@@ -14,17 +14,13 @@ public class ImageLoader {
     private static ImageLoader INSTANCE = null;
 
     // imagenes disponibles
-    private Image yellowButton = null;
-    private Image blueButton = null;
-    private Image redButton = null;
-    private Image greenButton = null;
     private Image yellowButtonClicked = null;
     private Image blueButtonClicked = null;
     private Image redButtonClicked = null;
     private Image greenButtonClicked = null;
-    private Image startButton = null;
     private Image startButtonCropped = null;
     private Image menuBackground = null;
+    private Image gameOverBackground = null;
 
     // constructor privado para que solo exista una instancia
     private ImageLoader() {
@@ -41,17 +37,13 @@ public class ImageLoader {
 
     //llama a todos los cargar imagenes de todas las imagenes
     private void loadImages() {
-        //yellowButton = loadImage("/Images/amarillo.png");
-        //blueButton = loadImage("/Images/azul.png");
-        //redButton = loadImage("/Images/rojo.png");
-        //greenButton = loadImage("/Images/verde.png");
-        //startButton = loadImage("/Images/start.png");
         startButtonCropped = loadImage("/Images/startCropped.png");
         menuBackground = loadImage("/Images/menuBackground.png");
         redButtonClicked = loadImage("/Images/rojoClicked.png");
         blueButtonClicked = loadImage("/Images/azulClicked.png");
         greenButtonClicked = loadImage("/Images/verdeClicked.png");
         yellowButtonClicked = loadImage("/Images/amarilloClicked.png");
+        gameOverBackground = loadImage("/Images/gameOverBackground.png");
     }
 
     private Image loadImage(String imageName) {
@@ -63,22 +55,6 @@ public class ImageLoader {
             e.printStackTrace();
         }
         return resultado;
-    }
-
-    public Image getYellowButton() {
-        return yellowButton;
-    }
-
-    public Image getBlueButton() {
-        return blueButton;
-    }
-
-    public Image getRedButton() {
-        return redButton;
-    }
-
-    public Image getGreenButton() {
-        return greenButton;
     }
 
     public Image getYellowButtonClicked() {
@@ -97,12 +73,10 @@ public class ImageLoader {
         return greenButtonClicked;
     }
 
-    public Image getStartButton() {
-        return startButton;
-    }
-
     public Image getStartButtonCropped() { return startButtonCropped; }
 
     public Image getMenuBackground() { return menuBackground; }
+
+    public Image getGameOverBackground() { return gameOverBackground; }
 
 }
