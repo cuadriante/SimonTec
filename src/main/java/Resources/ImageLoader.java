@@ -21,6 +21,7 @@ public class ImageLoader {
     private Image startButtonCropped = null;
     private Image menuBackground = null;
     private Image gameOverBackground = null;
+    private Image victoryBackground = null;
 
     // constructor privado para que solo exista una instancia
     private ImageLoader() {
@@ -44,6 +45,7 @@ public class ImageLoader {
         greenButtonClicked = loadImage("/Images/verdeClicked.png");
         yellowButtonClicked = loadImage("/Images/amarilloClicked.png");
         gameOverBackground = loadImage("/Images/gameOverBackground.png");
+        victoryBackground = loadImage("/Images/victoryBackground.png");
     }
 
     private Image loadImage(String imageName) {
@@ -78,5 +80,6 @@ public class ImageLoader {
     public Image getMenuBackground() { return menuBackground; }
 
     public Image getGameOverBackground() { return gameOverBackground; }
+    public Image getVictoryBackground() { return victoryBackground; }
 
 }

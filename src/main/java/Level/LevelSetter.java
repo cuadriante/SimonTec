@@ -8,6 +8,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import GameWindow.GameOverWindow;
+import GameWindow.VictoryWindow;
 
 import java.net.URISyntaxException;
 
@@ -106,14 +107,22 @@ public class LevelSetter {
     }
 
     public static void nextLevel() {
-        GameWindow.patternStorage.addColor();
-        GameWindow.patternStorage.setIndex(0);
-        GameWindow.patternStorage.patternStorageAnimation();
-        GameWindow.userPatternStorage.setIndex(-1);
-        GameWindow.userPatternStorage.deleteUserPatternStorage();
-        newLevelLabel();
-        repeatLabel.setFill(Color.valueOf("#808080"));
-        waitLabel.setFill(Color.valueOf("#ffffff"));
-        timeBetweenColors = timeBetweenColors - 100;
+        level = GameWindow.patternStorage.getLevel();
+        if (level == 10){
+            VictoryWindow victoryWindow = new VictoryWindow(GameWindow.gameStage, GameWindow.musicPlayer, GameWindow.soundPlayer);
+        } else {
+            System.out.println(level);
+            GameWindow.patternStorage.addColor();
+            GameWindow.patternStorage.setIndex(0);
+            GameWindow.patternStorage.patternStorageAnimation();
+            GameWindow.userPatternStorage.setIndex(-1);
+            GameWindow.userPatternStorage.deleteUserPatternStorage();
+
+            newLevelLabel();
+            repeatLabel.setFill(Color.valueOf("#808080"));
+            waitLabel.setFill(Color.valueOf("#ffffff"));
+
+            timeBetweenColors = timeBetweenColors - 100;
+        }
     }
 }

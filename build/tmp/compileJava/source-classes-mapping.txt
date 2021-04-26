@@ -1,25 +1,25 @@
+Pattern/CircularList.java
+ Pattern.CircularList
 Resources/SoundPlayer.java
  Resources.SoundPlayer
+Pattern/UserPatternStorage.java
+ Pattern.UserPatternStorage
 Pattern/Node.java
  Pattern.Node
-Pattern/PatternStorage.java
- Pattern.PatternStorage
- Pattern.PatternStorage$1
-Level/LevelSetter.java
- Level.LevelSetter
+Resources/MusicPlayer.java
+ Resources.MusicPlayer
+ Resources.MusicPlayer$1
 Pattern/Color.java
  Pattern.Color
 Main.java
  Main
-Pattern/CircularList.java
- Pattern.CircularList
-Resources/MusicPlayer.java
- Resources.MusicPlayer
- Resources.MusicPlayer$1
-Pattern/UserPatternStorage.java
- Pattern.UserPatternStorage
+GameWindow/VictoryWindow.java
+ GameWindow.VictoryWindow
 Resources/ImageLoader.java
  Resources.ImageLoader
+Pattern/PatternStorage.java
+ Pattern.PatternStorage
+ Pattern.PatternStorage$1
 GameWindow/GameOverWindow.java
  GameWindow.GameOverWindow
 GameWindow/GameWindow.java
@@ -27,3 +27,5 @@ GameWindow/GameWindow.java
  GameWindow.GameWindow$1
 MenuWindow/Menu.java
  MenuWindow.Menu
+Level/LevelSetter.java
+ Level.LevelSetter
