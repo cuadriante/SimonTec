@@ -1,16 +1,13 @@
 package Level;
 
-import GameWindow.GameWindow;
+import Window.GameWindow;
 import Pattern.CircularList;
-import Pattern.PatternStorage;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
-import GameWindow.GameOverWindow;
-import GameWindow.VictoryWindow;
-
-import java.net.URISyntaxException;
+import Window.GameOverWindow;
+import Window.VictoryWindow;
 
 public class LevelSetter {
 

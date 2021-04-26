@@ -1,4 +1,4 @@
-package GameWindow;
+package Window;
 
 import Resources.ImageLoader;
 import Resources.MusicPlayer;
@@ -6,7 +6,6 @@ import Resources.SoundPlayer;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
-import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;

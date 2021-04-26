@@ -1,9 +1,7 @@
 package Resources;
 
-import GameWindow.GameWindow;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
-import javafx.util.Duration;
 
 import java.net.URISyntaxException;
 import java.util.Objects;

@@ -1,4 +1,4 @@
-package GameWindow;
+package Window;
 
 import Resources.ImageLoader;
 import Resources.MusicPlayer;

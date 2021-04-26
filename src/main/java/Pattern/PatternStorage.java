@@ -1,12 +1,9 @@
 package Pattern;
 
-import GameWindow.GameWindow;
+import Window.GameWindow;
 import Level.LevelSetter;
 import javafx.concurrent.Task;
-import javafx.scene.Group;
 import javafx.scene.image.ImageView;
-
-import java.sql.Time;
 
 public class PatternStorage {
     CircularList<Color> patternStorage = new CircularList<>();

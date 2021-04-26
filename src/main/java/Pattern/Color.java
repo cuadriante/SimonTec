@@ -1,6 +1,6 @@
 package Pattern;
 
-import GameWindow.GameWindow;
+import Window.GameWindow;
 import javafx.scene.image.ImageView;
 
 import java.util.Random;

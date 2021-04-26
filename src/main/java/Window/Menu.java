@@ -1,12 +1,15 @@
-package MenuWindow;
+package Window;
 
-import GameWindow.GameWindow;
+import Level.LevelSetter;
+import Window.GameWindow;
 import Resources.ImageLoader;
 import Resources.MusicPlayer;
+import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.Group;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
@@ -46,23 +49,47 @@ public class Menu {
         menuBackground.setLayoutX(0);
         menuBackground.setLayoutY(0);
 
-        Button startButton =new Button();
-        startButton.setLayoutX(266);
-        startButton.setLayoutY(270);
-        ImageView startButtonImage = new ImageView(ImageLoader.getInstance().getStartButtonCropped());
-        startButton.setGraphic(startButtonImage);
-        startButton.setWrapText(true);
+        ImageView startButton = new ImageView(ImageLoader.getInstance().getStartButtonCropped());
+        startButton.setLayoutX(272);
+        startButton.setLayoutY(274);
+
+//        Button startButton =new Button();
+//        startButton.setLayoutX(266);
+//        startButton.setLayoutY(270);
+//        ImageView startButtonImage = new ImageView(ImageLoader.getInstance().getStartButtonCropped());
+//        startButton.setGraphic(startButtonImage);
+//        startButton.setWrapText(true);
+
+        openGameWhenClicked(startButton);
 
         menuWindow.getChildren().add(menuBackground);
         menuWindow.getChildren().add(startButton);
 
-        startButton.setOnAction(e ->{
-            try{
+//        startButton.setOnAction(e ->{
+//            try{
+//                lobby.hide();
+//                GameWindow gameWindow = new GameWindow(lobby, musicPlayer);
+//            } catch (Exception e2){
+//                e2.getMessage();
+//            }
+//                });
+    }
+
+    public void openGameWhenClicked(ImageView startButton){
+        startButton.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
+
+            @Override
+            public void handle(MouseEvent event) {
+                try{
                 lobby.hide();
                 GameWindow gameWindow = new GameWindow(lobby, musicPlayer);
-            } catch (Exception e2){
+                } catch (Exception e2){
                 e2.getMessage();
+                }
+                event.consume();
             }
-                });
+        });
+
+
     }
 }
